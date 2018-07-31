@@ -1,0 +1,25 @@
+body {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to right, #ff70a6, #e9ff70);
+}
+
+.back {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(+45deg, #ff70a6, #e9ff70);
+  /* border: solid 2px lightblue; */
+  border-radius: 3%;
+  box-shadow: 5px 10px #403d39;
+}
+.login {
+  /* display: flex;
+  justify-content: center;
+  flex-direction: column; */
+  padding: 150px;
+  /* border: solid 2px black; */
+}
