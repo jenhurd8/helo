@@ -27,13 +27,20 @@ class Auth extends Component {
   }
 
   loginUser(username, password) {
-    this.loginUser(username, password);
+    console.log(username, password);
+    axios
+      .get(`http://localhost:3001/api/loginUser/${username}/${password}`)
+      .then(response => {
+        console.log(response.data);
+      });
   }
 
   render() {
     return (
       <div className="back">
         <div className="login">
+          <h1>:)</h1>
+          <h1>Helo</h1>
           <input
             name="username"
             placeholder="User Name"

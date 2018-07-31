@@ -17,6 +17,7 @@ massive(process.env.CONNECTION_STRING)
 app.use(bodyParser.json());
 
 app.post("/api/registerNewUser", controller.registerNewUser);
+app.get("/api/loginUser/:username/:password", controller.loginUser);
 
 app.listen(port, () => {
   console.log(`Server listening on port ${port}`);

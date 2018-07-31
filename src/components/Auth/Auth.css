@@ -6,7 +6,10 @@ body {
   align-items: center;
   background: linear-gradient(to right, #ff70a6, #e9ff70);
 }
-
+h1 {
+  color: white;
+  font-weight: bold;
+}
 .back {
   display: flex;
   justify-content: center;
