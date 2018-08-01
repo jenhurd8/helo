@@ -1,18 +1,29 @@
+import axios from "axios";
+
+const USER = "USER";
+
 const initialState = {
   username: "Test Person",
   id: 0,
   picture: "https://robohash.org/63.143.42.243.png"
 };
 
+export function user(userId, username, pic) {
+  return {
+    type: USER,
+    payload: { userId, username, pic }
+  };
+}
+
 export default function reducer(state = initialState, action) {
   console.log(action.payload);
   switch (action.type) {
-    case "GET_USER_PENDING":
+    case "USER_PENDING":
       return { ...state, isLoading: true };
-    case "GET_USER_FULFILLED":
+    case "USER_FULFILLED":
       //check the username: action.payload.data not setup
-      return { ...state, isLoading: false, username: action.payload.data };
-    case "GET_USER_REJECTED":
+      return { user: action.payload };
+    case "USER_REJECTED":
       return { ...state, isLoading: false, error: action.payload };
 
     default:

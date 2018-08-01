@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import axios from "axios";
 import "./Auth.css";
+import { connect } from "react-redux";
+import { user } from "../../ducks/reducer";
+
 class Auth extends Component {
   constructor() {
     super();
@@ -21,37 +24,37 @@ class Auth extends Component {
         password: this.state.password
       })
       .then(response => {
-        console.log(response.data);
+        //console.log(response.data);
+        this.props.user(username, password);
         this.props.history.push("/dashboard");
       });
   }
 
   loginUser(username, password) {
-    console.log(username, password);
     axios
       .get(`http://localhost:3001/api/loginUser/${username}/${password}`)
       .then(response => {
-        // console.log(response.data);
-        // console.log(username + response.data.username);
-        // console.log(password + response.data.password);
         if (
           response.data.username === username &&
           response.data.password === password
         ) {
-          console.log("login success");
+          //console.log("login success");
+          console.log(this.props);
+          this.props.user(username, password);
           this.props.history.push("/dashboard");
         } else {
           console.log("wrong password");
+          this.props.history.push("/");
         }
-        //console.log(response.data.username, response.data.password);
       });
   }
 
   render() {
+    console.log(this.props);
     return (
       <div className="back">
         <div className="login">
-          <h1>:)</h1>
+          <h1>:O</h1>
           <h1>Helo</h1>
           <input
             name="username"
@@ -88,4 +91,7 @@ class Auth extends Component {
   }
 }
 
-export default Auth;
+export default connect(
+  null,
+  { user }
+)(Auth);

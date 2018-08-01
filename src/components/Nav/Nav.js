@@ -7,12 +7,22 @@ class Nav extends React.Component {
   render() {
     console.log(this.props);
     const { location } = this.props;
-    console.log(location.pathname);
+    //console.log(location.pathname);
 
     if (location.pathname !== "/") {
       return (
         <div className="content">
           <div className="navSide">
+            <div className="userPic">
+              {this.props.username}
+              <br />
+              <img
+                src={this.props.picture}
+                alt="provider"
+                width="80px"
+                height="80px"
+              />
+            </div>
             <div>
               <Link to="/">
                 <button>Logout</button>
@@ -35,8 +45,6 @@ class Nav extends React.Component {
     return null;
   }
 }
-
-// export default withRouter(Nav);
 
 function mapStateToProps(state) {
   return {
