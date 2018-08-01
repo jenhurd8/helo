@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
 import "./Auth.css";
-
 class Auth extends Component {
   constructor() {
     super();
@@ -23,6 +22,7 @@ class Auth extends Component {
       })
       .then(response => {
         console.log(response.data);
+        this.props.history.push("/dashboard");
       });
   }
 
@@ -31,7 +31,19 @@ class Auth extends Component {
     axios
       .get(`http://localhost:3001/api/loginUser/${username}/${password}`)
       .then(response => {
-        console.log(response.data);
+        // console.log(response.data);
+        // console.log(username + response.data.username);
+        // console.log(password + response.data.password);
+        if (
+          response.data.username === username &&
+          response.data.password === password
+        ) {
+          console.log("login success");
+          this.props.history.push("/dashboard");
+        } else {
+          console.log("wrong password");
+        }
+        //console.log(response.data.username, response.data.password);
       });
   }
 
