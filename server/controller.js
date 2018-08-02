@@ -3,10 +3,10 @@ module.exports = {
     let db = req.app.get("db");
     //console.log("register" + req.body);
     console.log("register: " + JSON.stringify(req.body));
-    const { username, password } = req.body;
-    console.log(username, password);
+    const { username, password, profile_pic } = req.body;
+    console.log(username, password, profile_pic);
 
-    db.registerUser([username, password])
+    db.registerUser([username, password, profile_pic])
       .then(users => {
         db.getUsers().then(users => {
           return res

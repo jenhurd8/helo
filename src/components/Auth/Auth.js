@@ -18,14 +18,17 @@ class Auth extends Component {
   };
 
   registerNewUser(username, password) {
+    console.log(this.props);
     axios
       .post(`http://localhost:3001/api/registerNewUser`, {
         username: this.state.username,
-        password: this.state.password
+        password: this.state.password,
+        profile_pic: "https://robohash.org/" + this.state.username
       })
       .then(response => {
-        //console.log(response.data);
-        this.props.user(username, password);
+        console.log(response.data);
+        //this.props.user([response.data.username, response.data.profile_pic]);
+        this.props.user(response.data.username);
         this.props.history.push("/dashboard");
       });
   }
@@ -39,8 +42,8 @@ class Auth extends Component {
           response.data.password === password
         ) {
           //console.log("login success");
-          console.log(this.props);
-          this.props.user(username, password);
+          //console.log(this.props);
+          this.props.user(username);
           this.props.history.push("/dashboard");
         } else {
           console.log("wrong password");
@@ -50,7 +53,7 @@ class Auth extends Component {
   }
 
   render() {
-    console.log(this.props);
+    // console.log(this.props);
     return (
       <div className="back">
         <div className="login">

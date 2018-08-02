@@ -1,11 +1,8 @@
 INSERT INTO helousers
-    (username, password)
+    (username, password, profile_pic)
 VALUES
-    ($1, $2);
+    ($1, $2, $3);
 
 SELECT *
 FROM helousers;
 
--- SELECT *
--- FROM helousers
--- WHERE username = username;

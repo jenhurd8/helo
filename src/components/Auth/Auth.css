@@ -12,7 +12,7 @@ h1 {
 }
 .back {
   margin-top: 30%;
-  margin-left: 0%;
+  margin-left: 40% !important;
   display: flex;
   justify-content: center;
   align-items: center;

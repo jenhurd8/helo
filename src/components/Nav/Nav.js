@@ -6,8 +6,10 @@ import "./Nav.css";
 class Nav extends React.Component {
   render() {
     console.log(this.props);
+    console.log(this.state);
     const { location } = this.props;
     //console.log(location.pathname);
+    //console.log(this.props.username);
 
     if (location.pathname !== "/") {
       return (
