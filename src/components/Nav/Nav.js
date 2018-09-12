@@ -2,11 +2,13 @@ import React from "react";
 import { Link, withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import "./Nav.css";
+import { logout } from "../../ducks/reducer";
 
 class Nav extends React.Component {
   render() {
     console.log(this.props);
-    console.log(this.state);
+    //console.log(logout);
+    // console.log(this.state);
     const { location } = this.props;
     //console.log(location.pathname);
     //console.log(this.props.username);
@@ -27,7 +29,7 @@ class Nav extends React.Component {
             </div>
             <div>
               <Link to="/">
-                <button>Logout</button>
+                <button onClick={() => logout()}>Logout</button>
               </Link>
             </div>
             <div>
@@ -55,4 +57,9 @@ function mapStateToProps(state) {
   };
 }
 
-export default withRouter(connect(mapStateToProps)(Nav));
+export default withRouter(
+  connect(
+    mapStateToProps,
+    logout
+  )(Nav)
+);

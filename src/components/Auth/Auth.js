@@ -37,11 +37,12 @@ class Auth extends Component {
     axios
       .get(`http://localhost:3001/api/loginUser/${username}/${password}`)
       .then(response => {
+        console.log(response);
         if (
           response.data.username === username &&
           response.data.password === password
         ) {
-          //console.log("login success");
+          // console.log("login success");
           //console.log(this.props);
           this.props.user(username);
           this.props.history.push("/dashboard");
@@ -57,7 +58,14 @@ class Auth extends Component {
     return (
       <div className="back">
         <div className="login">
-          <h1>:O</h1>
+          <div className="smiley">
+            <div>
+              <div id="leftEye" />
+              <div id="rightEye" />
+            </div>
+
+            <div id="mouth" />
+          </div>
           <h1>Helo</h1>
           <input
             name="username"
