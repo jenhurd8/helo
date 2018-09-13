@@ -67,35 +67,45 @@ class Auth extends Component {
             <div id="mouth" />
           </div>
           <h1>Helo</h1>
-          <input
-            name="username"
-            placeholder="User Name"
-            type="text"
-            onChange={this.onChangeHandler}
-          />
+          <div className="title">
+            Username:{" "}
+            <input
+              name="username"
+              placeholder="User Name"
+              type="text"
+              onChange={this.onChangeHandler}
+            />
+          </div>
+
           <br />
           <br />
-          <input
-            name="password"
-            placeholder="Password"
-            type="text"
-            onChange={this.onChangeHandler}
-          />
+          <div className="title">
+            Password:{" "}
+            <input
+              name="password"
+              placeholder="Password"
+              type="text"
+              onChange={this.onChangeHandler}
+            />
+          </div>
+
           <br />
-          <button
-            onClick={() =>
-              this.loginUser(this.state.username, this.state.password)
-            }
-          >
-            Login
-          </button>
-          <button
-            onClick={() =>
-              this.registerNewUser(this.state.username, this.state.password)
-            }
-          >
-            Register
-          </button>
+          <div>
+            <button
+              onClick={() =>
+                this.loginUser(this.state.username, this.state.password)
+              }
+            >
+              Login
+            </button>
+            <button
+              onClick={() =>
+                this.registerNewUser(this.state.username, this.state.password)
+              }
+            >
+              Register
+            </button>
+          </div>
         </div>
       </div>
     );

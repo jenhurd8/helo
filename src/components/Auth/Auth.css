@@ -9,10 +9,17 @@ h1 {
   align-items: center;
   background-color: transparent;
   border-radius: 3%;
-  box-shadow: 5px 5px 5px 5px #403d39;
+  /* box-shadow: 5px 5px 5px 5px; */
+
+  box-shadow: 1px 3px 5px 1px rgba(139, 72, 72, 0.1),
+    0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 1px 2px 0 rgba(0, 0, 0, 0.2),
+    0 1px 2px 0 rgba(0, 0, 0, 0.2);
 }
 .login {
-  padding: 150px;
+  padding: 50px 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .smiley {
   height: 80px;
@@ -25,6 +32,8 @@ h1 {
 button {
   background-color: #403d39;
   color: white;
+  padding: 8px;
+  margin-right: 15px;
 }
 #leftEye {
   margin-top: 30px;
@@ -50,4 +59,7 @@ button {
   margin-top: 5px;
   margin-bottom: 5px;
   margin-left: 15px;
+}
+.title {
+  color: white;
 }
