@@ -17,6 +17,7 @@
     "merge": "^1.2.1",
     "mixin-deep": "^2.0.1",
     "react": "^16.10.1",
+    "react-dev-utils": "^9.1.0",
     "react-dom": "^16.10.1",
     "react-redux": "^5.1.1",
     "react-router-dom": "^4.3.1",
@@ -24,7 +25,8 @@
     "redux": "^4.0.4",
     "redux-promise-middleware": "^5.1.1",
     "set-value": "^3.0.1",
-    "url-parse": "^1.4.7"
+    "url-parse": "^1.4.7",
+    "webpack-dev-server": "^3.8.2"
   },
   "scripts": {
     "start": "react-scripts start",
